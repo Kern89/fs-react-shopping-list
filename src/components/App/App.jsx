@@ -19,6 +19,7 @@ function App() {
             <main>
                 <p>Under Construction...</p>
             <Form />
+            <h2>Shopping List</h2>
             <List />
             </main>
         </div>
