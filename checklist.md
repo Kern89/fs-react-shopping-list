@@ -9,7 +9,7 @@ Checklist for the shopping list app
  * Add insert statements to the `database.sql` file
 
 ## GET 
- * Create a GET route in the `[insert router]`
+ * Create a GET route in the `groceries.router`
  * Test the GET route with Postman
  * Add useEffect and Axios GET to the App.jsx
  * Display items on the page with .map
@@ -19,27 +19,27 @@ Checklist for the shopping list app
 ## POST
  * Add input fields to the page
  * Create a POST route in App.jsx for adding shopping items
- * Create a POST route in the `[insert router]`
+ * Create a POST route in the `groceries.router`
  * Test the POST route with Postman
  * 
 
 ## DELETE
  * Create a DELETE route in App.jsx for removing an item from the shopping list
- * Create a DELETE route in  the `[insert router]` to remove item from the database
+ * Create a DELETE route in  the `groceries.router` to remove item from the database
  * Test the DELETE route with Postman
 
 ## PUT
  * Create a PUT route in App.jsx for changing status to `purchased`
- * Create a PUT route in the `[insert router]` to update item in the database
+ * Create a PUT route in the `groceries.router` to update item in the database
  * Test the PUT route with Postman
  * Change display on page to remove buttons when status is changed
 
 ## RESET/CLEAR
  * Create a PUT route in App.jsx for changing status to default
- * Create a PUT route in the `[insert router]` to update item in the database
+ * Create a PUT route in the `groceries.router` to update item in the database
  * Test the PUT route with Postman
  * Create a DELETE route in App.jsx for removing everything from the shopping list
- * Create a DELETE route in  the `[insert router]` to clear the database
+ * Create a DELETE route in  the `groceries.router` to clear the database
  * Test the DELETE route with Postman
 
 -----------
@@ -63,9 +63,24 @@ Checklist for the shopping list app
  #### App
  * Source Form
  * Source Display
+ * Add GET
+ * Add POST
+ * Add PUT
+ * Add DELETE
+ * Pass Props to Form
+ * Pass Props to Display
+
  #### Header
- * Create 
+ * Edit Header
+
  #### Form
+ * Create Form component
+
  #### Display
- * Source Item
+ * Create Display component
+ * Source Item component
+ * Pass Props to Item
+
  #### Item
+ * Create Item component(to be shown in display per item in stock)
+ * Use Props to link buttons to routes
