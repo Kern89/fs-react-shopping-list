@@ -24,6 +24,7 @@ function List() {
                             <span>No Image</span>
                         </div>
                     )}
+                    <h4>{item.quantity}{item.unit}</h4>
                     <div>
                         <button onClick={}>Buy</button>
                         <button onClick={}>Remove</button>
@@ -33,3 +34,5 @@ function List() {
         </div> 
     )
 }
+
+export default List;
