@@ -9,10 +9,6 @@ import './App.css';
 
 function App() {
 
-    // GET
-
-    // POST
-
     // PUT
 
     // DELETE

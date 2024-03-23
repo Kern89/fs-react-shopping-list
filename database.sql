@@ -1,12 +1,12 @@
--- Don't forget to add your create table SQL 
--- It is also helpful to include some test data
+-- fs-react-shopping
+
 CREATE TABLE "groceryList" (
     id SERIAL PRIMARY KEY,
     name varchar(100) NOT NULL,
-    displayImage varchar(500),
+    "displayImage" varchar(2000),
     unit varchar(50) NOT NULL,
     quantity DECIMAL NOT NULL
-)
+);
 
 INSERT INTO "groceryList" ("name", "displayImage", "unit", "quantity")
 VALUES 
