@@ -8,7 +8,7 @@ Checklist for the shopping list app
  * Add sample data with insert statements
  * Add insert statements to the `database.sql` file
 
-## GET 
+## GET -- David
  * Create a GET route in the `groceries.router`
  * Test the GET route with Postman
  * Add useEffect and Axios GET to the App.jsx
@@ -16,25 +16,25 @@ Checklist for the shopping list app
     * Include buttons that will be used in the PUT
  * 
 
-## POST
+## POST  -- Michael
  * Add input fields to the page
  * Create a POST route in App.jsx for adding shopping items
  * Create a POST route in the `groceries.router`
  * Test the POST route with Postman
  * 
 
-## DELETE
+## DELETE -- Padee
  * Create a DELETE route in App.jsx for removing an item from the shopping list
  * Create a DELETE route in  the `groceries.router` to remove item from the database
  * Test the DELETE route with Postman
 
-## PUT
+## PUT -- Ken
  * Create a PUT route in App.jsx for changing status to `purchased`
  * Create a PUT route in the `groceries.router` to update item in the database
  * Test the PUT route with Postman
  * Change display on page to remove buttons when status is changed
 
-## RESET/CLEAR
+## RESET/CLEAR -- Lons
  * Create a PUT route in App.jsx for changing status to default
  * Create a PUT route in the `groceries.router` to update item in the database
  * Test the PUT route with Postman
