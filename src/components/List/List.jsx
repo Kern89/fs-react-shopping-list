@@ -3,12 +3,18 @@ import './List.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 function List() {
+    // useEffect called on page load
+    useEffect(() => {
+        console.log();
+        getGroceryList();
+    }, []);
+
     // List array
     const [itemList, setItemList] = useState([]);
 
     // GET
     const getGroceryList = () => {
-        axios.get('/api/countries').then((reponse) => {
+        axios.get('/api/groceries').then((response) => {
             setItemList(response.data);
         }).catch((error) => {
             console.log(error);
@@ -18,7 +24,7 @@ function List() {
     // DELETE
     const removeListItem = (id) => {
         console.log('remove item:', id);
-        axios.delete(`/api/${id}`).then((response) => {
+        axios.delete(`/api/groceries/${id}`).then((response) => {
             getGroceryList();
         }).catch((error) => {
             console.log(error);
@@ -28,7 +34,7 @@ function List() {
     // PUT
     const buyItem = (id) => {
         console.log('buy:', id);
-        axios.put(`/api/${id}`).then((response) => {
+        axios.put(`/api/groceries/${id}`).then((response) => {
             getGroceryList();
         }).catch((error) => {
             console.log(error);
