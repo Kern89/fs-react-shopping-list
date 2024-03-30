@@ -1,15 +1,40 @@
 import React from 'react';
 import './List.css';
-
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 function List() {
     // List array
-    const itemList = [];
+    const [itemList, setItemList] = useState([]);
+
     // GET
-    
+    const getGroceryList = () => {
+        axios.get('/api/countries').then((reponse) => {
+            setItemList(response.data);
+        }).catch((error) => {
+            console.log(error);
+            alert('Something went wrong!');
+        })
+    }
     // DELETE
-
+    const removeListItem = (id) => {
+        console.log('remove item:', id);
+        axios.delete(`/api/${id}`).then((response) => {
+            getGroceryList();
+        }).catch((error) => {
+            console.log(error);
+            alert('Something went wrong!')
+        })
+    }
     // PUT
-
+    const buyItem = (id) => {
+        console.log('buy:', id);
+        axios.put(`/api/${id}`).then((response) => {
+            getGroceryList();
+        }).catch((error) => {
+            console.log(error);
+            alert('Something went wrong!');
+        })
+    }
     // ToDo: hidden buttons
 
     return (
@@ -26,8 +51,8 @@ function List() {
                     )}
                     <h4>{item.quantity}{item.unit}</h4>
                     <div>
-                        <button onClick={}>Buy</button>
-                        <button onClick={}>Remove</button>
+                        <button onClick={() => buyItem(item.id)}>Buy</button>
+                        <button onClick={() => removeListItem(item.id)}>Remove</button>
                     </div>
                 </div>
             ))}
