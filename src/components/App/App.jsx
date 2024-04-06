@@ -20,7 +20,11 @@ function App() {
     }
 
     // PUT
-
+    const ResetList = () => {
+        axios.put('api/groceries/reset').then((response) => {
+            
+        })
+    }
     // DELETE
 
     return (
@@ -30,6 +34,7 @@ function App() {
                 <p>Under Construction...</p>
             <Form getGroceryList={getGroceryList} />
             <h2>Shopping List</h2>
+            <button onClick={(e) => {ResetList(e)}}>Reset</button>
             <List getGroceryList={getGroceryList} itemList={itemList} />
             </main>
         </div>

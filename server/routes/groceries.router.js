@@ -54,6 +54,20 @@ groceryRouter.put('/:id', (req, res) => {
         })
 });
 
+// PUT
+groceryRouter.put('/reset', (req, res) => {
+    const sqlText = `
+        UPDATE "groceryList" SET "purchased" = false;
+    `;
+    pool.query (sqlText, [req.params])
+        .then((result) => {
+            console.log('Reset all');
+            res.sendStatus(201);
+        }).catch((error) => {
+            console.log(`Error in making database query ${sqlText}:`, error);
+            res.sendStatus(500);
+        })
+});
 // DELETE
 groceryRouter.delete('/:id', (req, res) => {
     console.log('req.params', req.params);
