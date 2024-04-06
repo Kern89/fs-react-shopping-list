@@ -2,25 +2,18 @@ import React from 'react';
 import './List.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-function List() {
+import App from '../App/App';
+function List({getGroceryList, itemList}) {
     // useEffect called on page load
     useEffect(() => {
         console.log();
         getGroceryList();
     }, []);
 
-    // List array
-    const [itemList, setItemList] = useState([]);
+    
 
     // GET
-    const getGroceryList = () => {
-        axios.get('/api/groceries').then((response) => {
-            setItemList(response.data);
-        }).catch((error) => {
-            console.log(error);
-            alert('Something went wrong!');
-        })
-    }
+    
     // DELETE
     const removeListItem = (id) => {
         console.log('remove item:', id);

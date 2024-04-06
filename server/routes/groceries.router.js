@@ -25,7 +25,8 @@ groceryRouter.get('/', (req, res) => {
 groceryRouter.post('/', (req, res) => {
     const listItem = req.body
     const sqlText = `
-        INSERT INTO "groceryList" ("name", "displayImage", "unit", "quantity");
+        INSERT INTO "groceryList" ("name", "displayImage", "unit", "quantity")
+        VALUES ($1, $2, $3, $4);
     `;
     pool.query(sqlText, [listItem.name, listItem.displayImage, listItem.unit, listItem.quantity])
         .then((result) => {

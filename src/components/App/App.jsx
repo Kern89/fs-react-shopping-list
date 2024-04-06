@@ -1,13 +1,23 @@
-import React from 'react';
-
-import Header from '../Header/Header.jsx'
-import Form from '../Form/Form.jsx'
-import List from '../List/List.jsx'
-
+import React, {useState} from 'react';
+import Header from '../Header/Header.jsx';
+import Form from '../Form/Form.jsx';
+import List from '../List/List.jsx';
+import axios from 'axios';
 import './App.css';
 
 
 function App() {
+    // List array
+    const [itemList, setItemList] = useState([]);
+    // GET
+    const getGroceryList = () => {
+        axios.get('/api/groceries').then((response) => {
+            setItemList(response.data);
+        }).catch((error) => {
+            console.log(error);
+            alert('Something went wrong!');
+        })
+    }
 
     // PUT
 
@@ -18,9 +28,9 @@ function App() {
             <Header />
             <main>
                 <p>Under Construction...</p>
-            <Form />
+            <Form getGroceryList={getGroceryList} />
             <h2>Shopping List</h2>
-            <List />
+            <List getGroceryList={getGroceryList} itemList={itemList} />
             </main>
         </div>
     );
