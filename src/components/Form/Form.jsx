@@ -23,7 +23,7 @@ function Form({getGroceryList}) {
             console.log('Error:', error);
             alert('Something went wrong!')
         })
-    }
+    };
 
     return(
         <div>

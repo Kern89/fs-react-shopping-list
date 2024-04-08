@@ -9,11 +9,6 @@ function List({getGroceryList, itemList}) {
         console.log();
         getGroceryList();
     }, []);
-
-    
-
-    // GET
-    
     // DELETE
     const removeListItem = (id) => {
         console.log('remove item:', id);
@@ -33,9 +28,7 @@ function List({getGroceryList, itemList}) {
             console.log(error);
             alert('Something went wrong!');
         })
-    }
-    // ToDo: hidden buttons
-
+    };
     return (
         <div>
             {itemList.map((item) => (

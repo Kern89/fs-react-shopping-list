@@ -17,16 +17,17 @@ function App() {
             console.log(error);
             alert('Something went wrong!');
         })
-    }
-
+    };
     // PUT
-    const ResetList = () => {
-        axios.put('api/groceries/reset').then((response) => {
-            
+    const resetList = () => {
+        console.log('Anything');
+        axios.put('/api/groceries/renew/list').then((response) => {
+            console.log('grina');
+        }).catch((error) => {
+            console.log(error);
+            alert('Something went wrong!');
         })
-    }
-    // DELETE
-
+    };
     return (
         <div className="App">
             <Header />
@@ -34,7 +35,7 @@ function App() {
                 <p>Under Construction...</p>
             <Form getGroceryList={getGroceryList} />
             <h2>Shopping List</h2>
-            <button onClick={(e) => {ResetList(e)}}>Reset</button>
+            <button onClick={() => resetList}>Something Special</button>
             <List getGroceryList={getGroceryList} itemList={itemList} />
             </main>
         </div>
