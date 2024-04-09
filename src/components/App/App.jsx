@@ -20,7 +20,6 @@ function App() {
     };
     // PUT
     const resetList = () => {
-        console.log('Anything');
         axios.put('/api/groceries/renew/list').then((response) => {
             console.log('grina');
         }).catch((error) => {
@@ -35,7 +34,7 @@ function App() {
                 <p>Under Construction...</p>
             <Form getGroceryList={getGroceryList} />
             <h2>Shopping List</h2>
-            <button onClick={() => resetList}>Something Special</button>
+            <button onClick={() => resetList()}>Something Special</button>
             <List getGroceryList={getGroceryList} itemList={itemList} />
             </main>
         </div>

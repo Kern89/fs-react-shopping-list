@@ -40,7 +40,6 @@ groceryRouter.post('/', (req, res) => {
 
 // PUT
 groceryRouter.put('/:id', (req, res) => {
-    console.log('marc');
     const sqlText = `
         UPDATE "groceryList" SET "purchased" = NOT "purchased"
         WHERE "id" = $1;
@@ -57,18 +56,17 @@ groceryRouter.put('/:id', (req, res) => {
 
 // PUT
 groceryRouter.put('/renew/list', (req, res) => {
-    console.log('Ken');
-    // const sqlText = `
-    //     UPDATE "groceryList" SET "purchased" = FALSE;
-    // `;
-    // pool.query (sqlText, [req.params])
-    //     .then((result) => {
-    //         console.log('Reset all');
-    //         res.sendStatus(201);
-    //     }).catch((error) => {
-    //         console.log(`Error in making database query ${sqlText}:`, error);
-    //         res.sendStatus(500);
-    //     })
+    const sqlText = `
+        UPDATE "groceryList" SET "purchased" = FALSE;
+    `;
+    pool.query (sqlText)
+        .then((result) => {
+            console.log('Reset all');
+            res.sendStatus(201);
+        }).catch((error) => {
+            console.log(`Error in making database query ${sqlText}:`, error);
+            res.sendStatus(500);
+        })
 });
 // DELETE
 groceryRouter.delete('/:id', (req, res) => {
