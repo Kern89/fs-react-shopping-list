@@ -34,7 +34,7 @@ function App() {
                 <p>Under Construction...</p>
             <Form getGroceryList={getGroceryList} />
             <h2>Shopping List</h2>
-            <button onClick={() => resetList()}>Something Special</button>
+            <button onClick={() => resetList()}>Reset</button>
             <List getGroceryList={getGroceryList} itemList={itemList} />
             </main>
         </div>

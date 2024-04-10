@@ -2,7 +2,7 @@ import React from 'react';
 import './List.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import App from '../App/App';
+import Box from '@mui/material/Box';
 function List({getGroceryList, itemList}) {
     // useEffect called on page load
     useEffect(() => {
@@ -31,7 +31,9 @@ function List({getGroceryList, itemList}) {
     };
     return (
         <div>
-            {itemList.map((item) => (
+            {
+            itemList.map((item) => (
+                item.purchased == "FALSE" ?
                 <div key={item.id}>
                     <h3>{item.name}</h3>
                     {item.displayImage ? (
@@ -44,6 +46,21 @@ function List({getGroceryList, itemList}) {
                     <h4>{item.quantity}{item.unit}</h4>
                     <div>
                         <button onClick={() => buyItem(item.id)}>Buy</button>
+                        <button onClick={() => removeListItem(item.id)}>Remove</button>
+                    </div>
+                </div> : 
+                <div key={item.id}>
+                    <h3>{item.name}</h3>
+                    {item.displayImage ? (
+                        <img src={item.displayImage} alt={item.name} />
+                    ) : (
+                        <div className='no-image'>
+                        <span>No Image</span>
+                        </div>
+                    )}
+                    <h4>{item.quantity}{item.unit}</h4>
+                    <div>
+                        <button onClick={() => unbuyItem(item.id)}>Buy</button>
                         <button onClick={() => removeListItem(item.id)}>Remove</button>
                     </div>
                 </div>
